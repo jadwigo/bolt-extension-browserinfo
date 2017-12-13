@@ -1,7 +1,9 @@
 Bolt Browser Info
 ======================
 
-This parses the borwser version and type and makes it available in twig.
+A small extension to show the parsed info from https://github.com/ua-parser/uap-php in Bolt
+
+This parses the browser version and type and makes it available in twig.
 
 ## Usage
 
