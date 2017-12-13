@@ -1,0 +1,12 @@
+{% extends 'partials/_master.twig' %}
+
+{% block body %}
+
+<h2>{{ browser.ua.family|default("Unknown") }} - {{ browser.ua.major|default(0) }}.{{ browser.ua.minor|default(0) }}</h2>
+
+<h3>{{ browser.os.family|default("Unknown") }}</h3>
+
+{{ dump(browser) }}
+
+
+{% endblock body %}
