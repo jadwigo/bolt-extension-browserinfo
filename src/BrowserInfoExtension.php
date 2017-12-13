@@ -22,7 +22,8 @@ class BrowserInfoExtension extends SimpleExtension
     protected function registerTwigFunctions()
     {
         return [
-            'browserinfo' => ['browserInfoFunction', ['is_safe' => ['html']]]
+            'getbrowser' => 'browserGet',
+            'browserinfo' => ['browserInfo', ['is_safe' => ['html']]]
         ];
     }
     
@@ -37,11 +38,22 @@ class BrowserInfoExtension extends SimpleExtension
     }
 
     /**
-     * Render and return the Twig file templates/browserinfo.twig
+     * Return the browser data
      *
      * @return string
      */
-    public function browserInfoFunction()
+    public function browserGet()
+    {
+        return $this->browser;
+    }
+
+
+    /**
+     * Render and return the Twig file templates/info.twig
+     *
+     * @return string
+     */
+    public function browserInfo()
     {
         return $this->renderTemplate('info.twig', [
             'browser' => $this->browser
