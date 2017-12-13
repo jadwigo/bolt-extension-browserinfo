@@ -1,1 +1,3 @@
-{{ dump(browser) }}
+<h2>{{ browser.ua.family|default("Unknown") }} - {{ browser.ua.major|default(0) }}.{{ browser.ua.minor|default(0) }}</h2>
+
+<h3>{{ browser.os.family|default("Unknown") }}</h3>

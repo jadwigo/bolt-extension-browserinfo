@@ -1,10 +1,27 @@
-Bolt Extension Starter
+Bolt Browser Info
 ======================
 
-A starter skeleton for a Bolt v3.x Extension
+This parses the borwser version and type and makes it available in twig.
 
-To get going run the following command, replacing the last argument with the name of your extension:
+## Usage
 
-`composer create-project --no-install 'bolt/bolt-extension-starter:^3.0' <newextname>`  
+### In a twig template
 
-For more information, see this page in the Bolt documentation: https://docs.bolt.cm/extensions/building-starter/about
+```
+{% set browser = getbrowser() %}
+
+<p>{{ browser.ua.family|default("Unknown") }} - {{ browser.ua.major|default(0) }}.{{ browser.ua.minor|default(0) }}</p>
+<p>{{ browser.os.family|default("Unknown") }}</p>
+{{ dump(browser)}}
+
+```
+
+### As a template
+
+Use `{{ browserinfo() }}` in your template to render the `info.twig` template. You can probably override that template.
+
+### As a page
+
+Go to http://yoursite.example/browser and see it in action
+
+

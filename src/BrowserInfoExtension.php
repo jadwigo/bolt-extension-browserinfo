@@ -54,7 +54,7 @@ class BrowserInfoExtension extends SimpleExtension
             $this->app = $app;
         }
         //dump($this->app);
-        return $this->app['twig']->render('@BrowserInfo/info.twig', [
+        return $this->app['twig']->render('@BrowserInfo/page.twig', [
             'browser' => $this->browser
         ]);
     }
